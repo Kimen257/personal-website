@@ -1,10 +1,9 @@
 body {
   margin-left: 5%;
   margin-right: 5%;
-  margin-top:  0;
+  margin-top: 0;
   margin-bottom: 0;
-  font-family: "Onest";
-  src: url("/public/Onest.ttf");
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,13 +13,18 @@ code {
     monospace;
 }
 
-/*--- HEADER  ---*/
+
+/* ---------- HEADER ---------- */
+
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
 }
+
+
+/* Меню */
 
 .menu {
   display: flex;
@@ -29,7 +33,9 @@ header {
   width: 100%;
 }
 
-header a {
+
+/* Только ссылки меню */
+header > .menu a {
   font-size: 18px;
   font-weight: 500;
   transition: 0.3s ease-in-out;
@@ -37,10 +43,14 @@ header a {
   text-decoration: none;
   color: black;
 }
-header a:hover {
-  color:  #4824ff;
+
+
+header > .menu a:hover {
+  color: #4824ff;
   filter: drop-shadow(0px 0px 50px #4824ff);
 }
+
+/* ---------- КНОПКА СВЯЗАТЬСЯ ---------- */
 
 .btn {
   position: relative;
@@ -57,14 +67,15 @@ header a:hover {
   margin-right: 2%;
   cursor: pointer;
   outline: none;
-  
 }
+
 
 .btn:hover {
   filter: drop-shadow(0px 0px 35px #4824ff);
 }
 
-.btn:before{
+
+.btn::before {
   content: '';
   position: absolute;
   height: 300px;
@@ -75,24 +86,18 @@ header a:hover {
   transform: rotate(-20deg) translateX(-50px) translateY(-200px);
 }
 
-.btn:before:hover {
-  transform: rotate(-20deg) translateX(200px);
+
+.btn:hover::before {
+  transform: rotate(-20deg) translateX(200px) translateY(-200px);
 }
 
-.icon {
-  height: 55px;
-  border-radius: 50%;
-  background: white;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-right: 2%;
-}
 
-.icon.telegram {
-  content: url(/public/icons/telegram.png);
-}
 
-.icon:hover {
-  background: #4824ff;
-  filter: drop-shadow(0px 0px 34px #4824ff40);
+/* ---------- ИКОНКА TELEGRAM В HEADER ---------- */
+
+.icon.telegram img {
+    width: 55px;
+    height: 55px;
+    display: block;
+    background: white;
 }
